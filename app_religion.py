@@ -6,7 +6,7 @@ import io
 st.set_page_config(page_title="Ficha de Religión - El judaísmo", page_icon="📜", layout="centered")
 
 # Encabezado Oficial
-st.markdown("### FICHA DE RELIGIÓN – SESIÓN 1° AÑO A - B - C")
+st.markdown("### FICHA DE RELIGIÓN – SESIÓN2 - 1° AÑO A - B - C")
 st.markdown("**Tema:** El judaísmo: Cuna de las religiones monoteístas.")
 st.markdown("**Prof:** Eduardo Florez Montero / Unidad 1")
 st.markdown("---")
@@ -159,3 +159,4 @@ if st.button("Generar mi Evidencia en Word"):
             file_name=f"Ficha_Religion_{nombre.replace(' ', '_')}.docx",
             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         )
+
