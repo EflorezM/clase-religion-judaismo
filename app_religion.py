@@ -98,6 +98,14 @@ q8_2 = st.text_input("Acción 2:")
 q8_3 = st.text_input("Acción 3:")
 
 st.markdown("---")
+
+# NUEVA SECCIÓN: VALORACIÓN DE LA FICHA
+st.subheader("📊 Valoración de la Actividad")
+st.write("Tu opinión nos ayuda a mejorar nuestras clases interactivas.")
+val_funcional = st.slider("1. ¿Qué tan fácil y funcional te pareció usar esta ficha digital?", 1, 5, 5, help="1 = Muy difícil, 5 = Muy fácil")
+val_interes = st.radio("2. ¿El tema y las actividades te parecieron interesantes para tu aprendizaje?", ["Sí, mucho", "Estuvo bien", "No mucho", "Nada interesante"], horizontal=True)
+
+st.markdown("---")
 st.caption("🔒 SEGURIDAD: Respeta tu privacidad. Usa ejemplos sin nombres reales ni datos personales.")
 
 # Lógica para generar Word con validaciones
@@ -129,6 +137,11 @@ if st.button("Generar mi Evidencia en Word"):
         doc.add_heading('NIVEL 3 (DIFÍCIL) - RETO 2', level=2)
         doc.add_paragraph(f'7) Por qué el respeto es parte de valores cristianos: {q7}')
         doc.add_paragraph(f'8) 3 acciones de convivencia: 1) {q8_1} | 2) {q8_2} | 3) {q8_3}')
+        
+        # AGREGAR LA VALORACIÓN AL DOCUMENTO
+        doc.add_heading('Valoración de la Actividad', level=2)
+        doc.add_paragraph(f'Funcionalidad de la ficha (1 a 5 estrellas): {val_funcional}')
+        doc.add_paragraph(f'Interés en el aprendizaje: {val_interes}')
         
         bio = io.BytesIO()
         doc.save(bio)
